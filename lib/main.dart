@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:nutribox/screens/auth_screen.dart';
 import 'package:nutribox/screens/chat_screen.dart';
 import 'package:nutribox/screens/splash_screen.dart';
+import 'package:nutribox/screens/market_place.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() => runApp(MyApp());
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
                         return SplashScreen();
                       }
                       if (userSnapshot.hasData) {
-                        return ChatScreen();
+                        return MyHomePage();
                       }
                       return AuthScreen();
                     }),
