@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text(:'/:'/
+                    Text(
                       "${post["price"]} \★",
                       style: const TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
                     )
