@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "275710765427",
+    "project_id": "nutribox-fb000",
+    "storage_bucket": "nutribox-fb000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275710765427:android:aafd33deec9e3c57987d06",
+        "android_client_info": {
+          "package_name": "com.example.nutribox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275710765427-e744v5qm7fto3dlcd32knimdi296rmoe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJP0_ctUycEkc7zA32_hh0KjIgfx6WOzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275710765427-e744v5qm7fto3dlcd32knimdi296rmoe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

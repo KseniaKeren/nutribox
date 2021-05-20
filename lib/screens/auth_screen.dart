@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
-import 'package:flutter_complete_guide/widgets/auth/auth_form.dart';
+import 'package:nutribox/widgets/auth/auth_form.dart';
 
 class AuthScreen extends StatefulWidget {
   @override
@@ -25,7 +25,7 @@ class _AuthScreenState extends State<AuthScreen> {
     bool isLogin,
     BuildContext ctx,
   ) async {
-    AuthResult authResult;
+    UserCredential authResult;
 
     try {
       setState(() {
@@ -47,14 +47,14 @@ class _AuthScreenState extends State<AuthScreen> {
             .child('user_image')
             .child(authResult.user.uid + '.jpg');
 
-        await ref.putFile(image).onComplete;
+        await ref.putFile(image).whenComplete(() => null);
 
         final url = await ref.getDownloadURL();
 
-        await Firestore.instance
+        await FirebaseFirestore.instance
             .collection('users')
-            .document(authResult.user.uid)
-            .setData({
+            .doc(authResult.user.uid)
+            .set({
           'username': username,
           'email': email,
           'image_url': url,
