@@ -1,0 +1,55 @@
+const NUTRITIONIST_DATA = [
+  {
+    "name":"Burger",
+    "specialization":"Hawkers",
+    "price":2.99,
+    "image":"burger.png"
+  },{
+    "name":"Cheese Dip",
+    "specialization":"Hawkers",
+    "price":4.99,
+    "image":"cheese_dip.png"
+  },
+  {
+    "name":"Cola",
+    "specialization":"Mcdonald",
+    "price":1.49,
+    "image":"cola.png"
+  },
+  {
+    "name":"Fries",
+    "specialization":"Mcdonald",
+    "price":2.99,
+    "image":"fries.png"
+  },
+  {
+    "name":"Ice Cream",
+    "specialization":"Ben & Jerry's",
+    "price":9.49,
+    "image":"ice_cream.png"
+  },
+  {
+    "name":"Noodles",
+    "specialization":"Hawkers",
+    "price":4.49,
+    "image":"noodles.png"
+  },
+  {
+    "name":"Pizza",
+    "specialization":"Dominos",
+    "price":17.99,
+    "image":"pizza.png"
+  },
+  {
+    "name":"Sandwich",
+    "specialization":"Hawkers",
+    "price":2.99,
+    "image":"sandwich.png"
+  },
+  {
+    "name":"Wrap",
+    "specialization":"Subway",
+    "price":6.99,
+    "image":"wrap.png"
+  }
+];
