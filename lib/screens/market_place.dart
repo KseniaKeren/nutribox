@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'constants.dart';
 import 'package:nutribox/widgets/categories_scroller.dart';
+import 'package:nutribox/screens/chat_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -15,50 +16,69 @@ class _MyHomePageState extends State<MyHomePage> {
   bool closeTopContainer = false;
   double topContainer = 0;
 
+  void changeToChat() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ChatScreen()),
+    );
+  }
+
   List<Widget> itemsData = [];
 
   void getPostsData() {
     List<dynamic> responseList = NUTRITIONIST_DATA;
     List<Widget> listItems = [];
     responseList.forEach((post) {
-      listItems.add(Container(
-          height: 150,
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20.0)), color: Colors.white, boxShadow: [
-            BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 10.0),
-          ]),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      listItems.add(InkWell(
+          onTap: changeToChat,
+          child: Container(
+              height: 150,
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withAlpha(100), blurRadius: 10.0),
+                  ]),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      post["name"],
-                      style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          post["name"],
+                          style: const TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          post["specialization"],
+                          style:
+                              const TextStyle(fontSize: 17, color: Colors.grey),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "${post["price"]} \★",
+                          style: const TextStyle(
+                              fontSize: 25,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
                     ),
-                    Text(
-                      post["specialization"],
-                      style: const TextStyle(fontSize: 17, color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      "${post["price"]} \★",
-                      style: const TextStyle(fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+                    Image.asset(
+                      "assets/images/${post["image"]}",
+                      height: double.infinity,
                     )
                   ],
                 ),
-                Image.asset(
-                  "assets/images/${post["image"]}",
-                  height: double.infinity,
-                )
-              ],
-            ),
-          )));
+              ))));
     });
     setState(() {
       itemsData = listItems;
@@ -70,8 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     getPostsData();
     controller.addListener(() {
-
-      double value = controller.offset/119;
+      double value = controller.offset / 119;
 
       setState(() {
         topContainer = value;
@@ -83,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final double categoryHeight = size.height*0.30;
+    final double categoryHeight = size.height * 0.30;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -96,12 +115,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 alignment: Alignment.center,
                 child: Image.asset(
                   "assets/images/LOGO.png",
-                  fit: BoxFit.fitWidth,),
-              )
-          ),
+                  fit: BoxFit.fitWidth,
+                ),
+              )),
           // This two lines change the status bar color
           backwardsCompatibility: false,
-          systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Color(0xffffe061)),
+          systemOverlayStyle:
+              SystemUiOverlayStyle(statusBarColor: Color(0xffffe061)),
           centerTitle: true,
           title: Text('מרקטפלייס'),
           actions: [
@@ -123,11 +143,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: <Widget>[
                   Text(
                     "Loyality Cards",
-                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
                   Text(
                     "Menu",
-                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
                 ],
               ),
@@ -136,12 +162,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
-                opacity: closeTopContainer?0:1,
+                opacity: closeTopContainer ? 0 : 1,
                 child: AnimatedContainer(
                     duration: const Duration(milliseconds: 200),
                     width: size.width,
                     alignment: Alignment.topCenter,
-                    height: closeTopContainer?0:categoryHeight,
+                    height: closeTopContainer ? 0 : categoryHeight,
                     child: categoriesScroller),
               ),
               Expanded(
@@ -162,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         return Opacity(
                           opacity: scale,
                           child: Transform(
-                            transform:  Matrix4.identity()..scale(scale,scale),
+                            transform: Matrix4.identity()..scale(scale, scale),
                             alignment: Alignment.bottomCenter,
                             child: Align(
                                 heightFactor: 0.7,
