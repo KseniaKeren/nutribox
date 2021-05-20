@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Text(
                       post["specialization"],
-                      style: const TextStyle(fontSize: 17, color: Colors.grey),
+                      style: const TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                     SizedBox(
                       height: 10,
