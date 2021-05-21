@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'constants.dart';
 import 'package:nutribox/widgets/categories_scroller.dart';
-import 'package:nutribox/screens/chat_screen.dart';
+import 'package:nutribox/screens/nutr_profile.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void changeToChat() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ChatScreen()),
+      MaterialPageRoute(builder: (context) => Nutriotionist()),
     );
   }
 
@@ -123,9 +123,8 @@ class _MyHomePageState extends State<MyHomePage> {
           systemOverlayStyle:
               SystemUiOverlayStyle(statusBarColor: Color(0xffffe061)),
           centerTitle: true,
-          title: Text('מרקטפלייס'),
+          title: Text('בחר תזונאי/ת'),
           actions: [
-            Icon(Icons.favorite),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Icon(Icons.search),
