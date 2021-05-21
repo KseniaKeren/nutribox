@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           post["specialization"],
                           style:
-                              const TextStyle(fontSize: 17, color: Colors.grey),
+                              const TextStyle(fontSize: 18, color: Colors.grey),
                         ),
                         SizedBox(
                           height: 10,
@@ -66,8 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         Text(
                           "${post["price"]} \★",
                           style: const TextStyle(
-                              fontSize: 25,
-                              color: Colors.black,
+                              fontSize: 18,
+                              color: Colors.amber,
                               fontWeight: FontWeight.bold),
                         )
                       ],
@@ -138,38 +138,38 @@ class _MyHomePageState extends State<MyHomePage> {
           height: size.height,
           child: Column(
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Text(
-                    "Loyality Cards",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                  Text(
-                    "Menu",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //   children: <Widget>[
+              //     Text(
+              //       "Loyality Cards",
+              //       style: TextStyle(
+              //           color: Colors.grey,
+              //           fontWeight: FontWeight.bold,
+              //           fontSize: 20),
+              //     ),
+              //     Text(
+              //       "Menu",
+              //       style: TextStyle(
+              //           color: Colors.black,
+              //           fontWeight: FontWeight.bold,
+              //           fontSize: 20),
+              //     ),
+              //   ],
+              // ),
               const SizedBox(
                 height: 10,
               ),
-              AnimatedOpacity(
-                duration: const Duration(milliseconds: 200),
-                opacity: closeTopContainer ? 0 : 1,
-                child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    width: size.width,
-                    alignment: Alignment.topCenter,
-                    height: closeTopContainer ? 0 : categoryHeight,
-                    child: categoriesScroller),
-              ),
+              // AnimatedOpacity(
+              //   duration: const Duration(milliseconds: 200),
+              //   opacity: closeTopContainer ? 0 : 1,
+              //   child: AnimatedContainer(
+              //       duration: const Duration(milliseconds: 200),
+              //       width: size.width,
+              //       alignment: Alignment.topCenter,
+              //       height: closeTopContainer ? 0 : categoryHeight,
+              //       child: categoriesScroller),
+              // ),
               Expanded(
                   child: ListView.builder(
                       controller: controller,

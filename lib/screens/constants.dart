@@ -1,55 +1,50 @@
 const NUTRITIONIST_DATA = [
   {
-    "name":"Burger",
-    "specialization":"Hawkers",
-    "price":2.99,
-    "image":"burger.png"
-  },{
-    "name":"Cheese Dip",
-    "specialization":"Hawkers",
-    "price":4.99,
-    "image":"cheese_dip.png"
+    "name":"משה כהן",
+    "specialization":"תזונאי בכיר",
+    "price":"5.0",
+    "image":"profile_1.png"
   },
   {
-    "name":"Cola",
-    "specialization":"Mcdonald",
-    "price":1.49,
-    "image":"cola.png"
+    "name":"יוני לוי",
+    "specialization":"מתמחה בסכרת",
+    "price":"4.5",
+    "image":"profile_2.png"
   },
   {
-    "name":"Fries",
-    "specialization":"Mcdonald",
-    "price":2.99,
-    "image":"fries.png"
+    "name":"יונית היימן",
+    "specialization":"מתמחה בילדים",
+    "price":"4.8",
+    "image":"profile_3.png"
   },
   {
-    "name":"Ice Cream",
-    "specialization":"Ben & Jerry's",
-    "price":9.49,
-    "image":"ice_cream.png"
+    "name":".רותם א",
+    "specialization":" ראש עיר",
+    "price":"5.0",
+    "image":"profile_99.png"
   },
   {
-    "name":"Noodles",
-    "specialization":"Hawkers",
-    "price":4.49,
-    "image":"noodles.png"
+    "name":"יוני לוי",
+    "specialization":"מתמחה בסכרת",
+    "price":"4.5",
+    "image":"profile_2.png"
   },
   {
-    "name":"Pizza",
-    "specialization":"Dominos",
-    "price":17.99,
-    "image":"pizza.png"
+    "name":"יוסי שוורץ",
+    "specialization":"מתמחה בילדים",
+    "price":"4.8",
+    "image":"profile_3.png"
   },
   {
-    "name":"Sandwich",
-    "specialization":"Hawkers",
-    "price":2.99,
-    "image":"sandwich.png"
+    "name":"ניק וייס",
+    "specialization":"מתמחה קיטו",
+    "price":"5.0",
+    "image":"profile_1.png"
   },
   {
-    "name":"Wrap",
-    "specialization":"Subway",
-    "price":6.99,
-    "image":"wrap.png"
+    "name":"משה כהן",
+    "specialization":"תזונאי בכיר",
+    "price":"5.0",
+    "image":"profile_1.png"
   }
 ];
