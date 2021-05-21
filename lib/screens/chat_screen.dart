@@ -54,7 +54,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "chat with Rotem",
+          "chat",
         ),
         actions: [
           DropdownButton(
