@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'nutribox',
             theme: ThemeData(
-              primarySwatch: Colors.pink,
-              backgroundColor: Colors.pink,
-              accentColor: Colors.deepPurple,
+              primaryColor: Color(0xffa3cb73),
+              backgroundColor: Color(0xffa3cb73),
+              accentColor: Color(0xffffe061),
               accentColorBrightness: Brightness.dark,
               buttonTheme: ButtonTheme.of(context).copyWith(
-                buttonColor: Colors.pink,
+                buttonColor: Color(0xffa3cb73),
                 textTheme: ButtonTextTheme.primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
